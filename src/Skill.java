@@ -1,8 +1,4 @@
 
 public class Skill {
-
-	public class Spell {
-
-	}
-
+	//TODO add attributes and methods 
 }

@@ -1,4 +1,5 @@
 
-public class Defense extends Skill{
+public class HCI
+{
 	//TODO add attributes and methods 
 }
