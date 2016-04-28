@@ -33,7 +33,6 @@ public class IHM extends JFrame
 		 */
 		JPanel pan = new JPanel();
 		pan.setBackground(Color.BLACK);
-
 		this.setContentPane(pan);
 	}
 }
