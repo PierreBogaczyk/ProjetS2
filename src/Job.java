@@ -1,4 +1,4 @@
 
-public class PlayerClass {
+public class Job {
 	//TODO add attributes and methods 
 }
