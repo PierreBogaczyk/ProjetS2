@@ -6,4 +6,8 @@ public class Attack extends Skill{
 	
 	private int skillDamage;
 	
+	public int getSkillDamage()
+	{
+		return this.skillDamage;
+	}
 }

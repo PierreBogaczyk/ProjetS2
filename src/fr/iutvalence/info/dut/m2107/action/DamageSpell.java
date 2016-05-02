@@ -5,4 +5,9 @@ public class DamageSpell extends Spell{
 	private String skillName;
 	private int castingTime;
 	private int spellDamage;
+	
+	public int getSpellDamage()
+	{
+		return this.spellDamage;
+	}
 }

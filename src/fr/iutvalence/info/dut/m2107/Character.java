@@ -10,4 +10,14 @@ public class Character {
 	private ExperienceBar characterExperience;
 	private Job characterJob;
 	private Inventory characterInventory;
+	private int characterHealth;
+	
+	public int getCharacterHealth()
+	{
+		return this.characterHealth;
+	}
+	public void setCharacterHealth(int health)
+	{
+		this.characterHealth = health;
+	}
 }	
