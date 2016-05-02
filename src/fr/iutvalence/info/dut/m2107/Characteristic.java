@@ -40,7 +40,7 @@ public String getcharsteristicName(){
 	
 }
 /**
- * 
+ * koukou
  * @return value characteristic
  */
 public int getcharacteristicValue(){

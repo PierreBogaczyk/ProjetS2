@@ -25,7 +25,7 @@ public class ExperienceBar {
 	public void Levelup(Character player){
 		if(this.currentExperienceAmount>=this.maxExperienceAmount){
 			this.currentExperienceAmount=Empty_currentExperienceAmount+(this.maxExperienceAmount-this.currentExperienceAmount);
-			player.setCharacterLevel(getCharacterLevel() + 1);			
+			player.setCharacterLevel(getCharacterLevel() + 1);		
 		}
 		
 	
