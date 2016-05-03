@@ -6,6 +6,20 @@ public class Attack extends Skill{
 	
 	private int skillDamage;
 	
+	
+	
+	/**
+	 * @param skillName
+	 * @param skillDamage
+	 */
+    public Attack(String skillName, int skillDamage)
+    {
+	    super(skillName);
+	    this.skillDamage = skillDamage;
+    }
+
+
+
 	public int getSkillDamage()
 	{
 		return this.skillDamage;

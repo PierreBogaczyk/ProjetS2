@@ -6,6 +6,19 @@ public class DamageSpell extends Spell{
 	private int castingTime;
 	private int spellDamage;
 	
+	
+	/**
+	 * @param skillName
+	 * @param castingTime
+	 * @param spellDamage
+	 */
+    public DamageSpell(String skillName, int castingTime, int spellDamage)
+    {
+	    super(skillName, castingTime);
+	    this.spellDamage = spellDamage;
+    }
+
+
 	public int getSpellDamage()
 	{
 		return this.spellDamage;

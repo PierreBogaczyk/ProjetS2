@@ -5,4 +5,21 @@ public class HealingSpell extends Spell{
 	private String skillName;
 	private int castingTime;
 	private int healthHealed;
+	/**
+	 * @param skillName
+	 * @param castingTime
+	 * @param healthHealed
+	 */
+    public HealingSpell(String skillName, int castingTime, int healthHealed)
+    {
+	    super(skillName, castingTime);
+	    this.healthHealed = healthHealed;
+    }
+	public int getHealthHealed()
+	{
+		return healthHealed;
+	}
+    
+	
+	
 }
