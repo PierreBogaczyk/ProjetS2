@@ -9,6 +9,8 @@ public class Area {
 	
 	private ArrayList<NPC> areaNPC;
 	
+	private ArrayList<Area> connectedArea;
+	
 	public Area(AreaType type, String name,ArrayList<NPC> npcList)
 	{
 		this.areaType = type;
