@@ -1,1 +1,1 @@
-# ProjetS2
+# Projet 42: Walkyries
