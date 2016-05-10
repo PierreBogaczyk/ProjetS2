@@ -5,7 +5,7 @@ public class ExperienceBar {
 	private int currentExperienceAmount;
 	private int maxExperienceAmount;
 	private static final int Empty_currentExperienceAmount=0;
-	
+	 
 	public void emptyBar()
 	{
 		this.currentExperienceAmount=Empty_currentExperienceAmount;

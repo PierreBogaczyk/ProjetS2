@@ -25,7 +25,7 @@ import fr.iutvalence.info.dut.m2107.Panel;
  */
 public class HCI extends JFrame
 {
-
+ 
 	/**
 	 * pan is an object of Panel
 	 */
