@@ -20,4 +20,8 @@ public class Character {
 	{
 		this.characterHealth = health;
 	}
+	public void setCharacterLevel(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 }	

@@ -30,6 +30,11 @@ public class ExperienceBar {
 		
 	
 	}
+
+	private int getCharacterLevel() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }
