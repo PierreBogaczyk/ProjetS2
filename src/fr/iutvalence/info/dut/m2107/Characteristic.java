@@ -31,7 +31,7 @@ public	void Setcharacteristic(String characteristicName,int characteristicValue)
 	 this.characteristicValue=characteristicValue;
  }
 /**
- * 
+ * show the characteristic name
  * @return name characteristic
  */
 public String getcharsteristicName(){
@@ -40,7 +40,7 @@ public String getcharsteristicName(){
 	
 }
 /**
- * koukou
+ * show the characteristic values
  * @return value characteristic
  */
 public int getcharacteristicValue(){
