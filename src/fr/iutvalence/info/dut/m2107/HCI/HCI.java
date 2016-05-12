@@ -25,7 +25,15 @@ import fr.iutvalence.info.dut.m2107.Panel;
  */
 public class HCI extends JFrame
 {
- 
+	/**
+	 * row count for grid layout
+	 */
+	private static final int ROW_COUNT = 4;
+	/**
+	 * column count for grid layout
+	 */
+	private static final int COLUMN_COUNT = 1;
+
 	/**
 	 * pan is an object of Panel
 	 */
@@ -41,12 +49,10 @@ public class HCI extends JFrame
 	 */
 	private static int WINDOW_SIZE_Y = 800;
 	
-	
-	//Create a new panel for button
-	JPanel pnlButton = new JPanel();
-	
-	//Create a new button menuButton
-	JButton menuButton = new JButton("Menu");
+	public JButton actionButton;
+	public JButton moveButton;
+	public JButton inventoryButton;
+	public JButton menuButton;
 	
 	public HCI(){
 		
@@ -91,6 +97,18 @@ public class HCI extends JFrame
 		splitPane.setDividerSize(1);
 
 		this.setContentPane(splitPane);
+		
+		GridLayout grid = new GridLayout(ROW_COUNT,COLUMN_COUNT);
+		actionMenu.setLayout(grid);
+		
+		this.actionButton = new JButton("Action");
+		this.moveButton = new JButton("Déplacement");
+		this.inventoryButton = new JButton("Inventaire");
+		this.menuButton = new JButton("Menu");
+		actionMenu.add(actionButton);
+		actionMenu.add(moveButton);
+		actionMenu.add(inventoryButton);
+		actionMenu.add(menuButton);
 		
 //		this.getContentPane().add(content);
 		//go();
