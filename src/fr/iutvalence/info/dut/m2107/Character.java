@@ -39,6 +39,20 @@ public class Character {
 		this.characterInventory = characterInventory;
 		this.characterHealth = characterHealth;
 	}
+	
+	
+	public void startCombat()
+	{
+		Enemy[] enemyTeam = new Enemy[currentArea.getNPCCount()];
+		for(int i = 0; i< currentArea.getAreaNPC().size();i++)
+		{
+			if(currentArea.getAreaNPC().get(i) instanceof Enemy)
+			{
+				enemyTeam[0] = (Enemy) currentArea.getAreaNPC().get(i);
+			}
+		}
+	}
+	
 	/***
 	 * show Health of character
 	 * @return CharacterHealth

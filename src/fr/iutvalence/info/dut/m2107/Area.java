@@ -9,13 +9,19 @@ public class Area {
 	
 	private ArrayList<NPC> areaNPC;
 	
+	private int NPCCount;
+
 	private ArrayList<Area> connectedArea;
 	
-	public Area(AreaType type, String name,ArrayList<NPC> npcList)
+	private int connectedAreaCount;
+	public Area(AreaType type, String name,ArrayList<NPC> npcList,ArrayList<Area> connectedArea)
 	{
 		this.areaType = type;
 		this.areaName = name;
 		this.areaNPC = npcList;
+		this.NPCCount = areaNPC.size();
+		this.connectedArea = connectedArea;
+		this.connectedAreaCount = connectedArea.size();
 	}
 	
 	public void endCombat()
@@ -23,8 +29,18 @@ public class Area {
 		
 	}
 	
-	public void startCombat()
+	public ArrayList<NPC> getAreaNPC()
 	{
-		
+		return this.areaNPC;
+	}
+	
+	public int getNPCCount()
+	{
+		return this.NPCCount;
+	}
+	
+	public int getConnectedAreaCount()
+	{
+		return this.connectedAreaCount;
 	}
 }
