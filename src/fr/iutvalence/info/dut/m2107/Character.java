@@ -1,12 +1,13 @@
 package fr.iutvalence.info.dut.m2107;
 import java.util.ArrayList;
+
+import fr.iutvalence.info.dut.m2107.action.Skill;
 /**
  * create class character
  * @author delarbrm
  *
  */
 public class Character {
-	//TODO add attributes and methods 
 	private String characterName;
 	private int characterLevel;
 	private Area currentArea;
@@ -41,7 +42,7 @@ public class Character {
 	}
 	
 	
-	public void startCombat()
+	public void startFight()
 	{
 		Enemy[] enemyTeam = new Enemy[currentArea.getNPCCount()];
 		for(int i = 0; i< currentArea.getAreaNPC().size();i++)
@@ -51,8 +52,32 @@ public class Character {
 				enemyTeam[0] = (Enemy) currentArea.getAreaNPC().get(i);
 			}
 		}
+		while(this.isFightOver(enemyTeam))
+		{
+			Skill chosenSkill = this.chooseAction();
+			for(int i = 0;  i < currentArea.getNPCCount(); i++)
+			{
+				enemyTeam[i].performAction(this,chosenSkill);
+			}
+		}
 	}
 	
+	private Skill chooseAction() {
+		//TODO method allowing the player to choose an action
+		return new Skill("Default");
+	}
+
+
+	private boolean isFightOver(Enemy[] enemyTeam) {
+		for(int i = 0;i < currentArea.getAreaNPC().size();i++)
+		{
+			if(enemyTeam[i].getEnemyHealth() > 0) return false;
+		}
+		if(this.getCharacterHealth() > 0) return false;
+		return true;
+	}
+
+
 	/***
 	 * show Health of character
 	 * @return CharacterHealth

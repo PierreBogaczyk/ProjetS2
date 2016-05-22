@@ -9,7 +9,6 @@ import fr.iutvalence.info.dut.m2107.action.DamageSpell;
 import fr.iutvalence.info.dut.m2107.action.CCSpell;
 
 public class Enemy extends NPC{
-	//TODO add attributes and methods 
 	private String npcName;
 	private int enemyHealth;
 	private ArrayList<Skill> enemySkillList;
@@ -22,9 +21,9 @@ public class Enemy extends NPC{
 		this.enemySkillList = skillList;
 		this.enemyCharacteristicList = charList;
 	}
-	public void performAction()
+	public void performAction(Character target,Skill targetSkill)
 	{
-		
+		//TODO method for enemy's action selection
 	}
 	public void useSkill(Skill usedSkill,Character target)
 	{
@@ -43,5 +42,12 @@ public class Enemy extends NPC{
 		{
 			target.setCharacterHealth(target.getCharacterHealth() - ((Attack)usedSkill).getSkillDamage());
 		}
+	}
+	
+	public int getEnemyHealth() {
+		return enemyHealth;
+	}
+	public void setEnemyHealth(int enemyHealth) {
+		this.enemyHealth = enemyHealth;
 	}
 }	
