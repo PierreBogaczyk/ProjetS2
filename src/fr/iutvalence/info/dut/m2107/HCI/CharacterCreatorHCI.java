@@ -6,6 +6,12 @@ import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 
+/**
+ * This class is HCI for character creator, it allows to write/choose informations and 
+ * to access the game
+ * @author MickaelPrades
+ *
+ */
 public class CharacterCreatorHCI extends JFrame
 {
 	/**
@@ -55,6 +61,7 @@ public class CharacterCreatorHCI extends JFrame
 		this.setAlwaysOnTop(false);
 		
 		
+		this.setVisible(true);
 	}
 	
 }

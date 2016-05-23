@@ -2,6 +2,8 @@ package fr.iutvalence.info.dut.m2107.HCI;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,7 +12,13 @@ import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 
-public class MenuHCI extends JFrame {
+/**
+ * This class is HCI for menu when you start application, 
+ * it allows to access the character creator and to exit application
+ * @author MickaelPrades
+ *
+ */
+public class MenuHCI extends JFrame implements ActionListener {
 
 	/**
 	 * row count for grid layout
@@ -20,11 +28,6 @@ public class MenuHCI extends JFrame {
 	 * column count for grid layout
 	 */
 	private static final int COLUMN_COUNT = 1;
-	
-	/**
-	 * pan is an object of Panel
-	 */
-	public Panel pan = new Panel();
 	
 	/**
 	 * width of HCI window
@@ -40,6 +43,8 @@ public class MenuHCI extends JFrame {
 	public ExitButton exitButton = new ExitButton("Quitter le jeu");
 	
 	public JPanel menu = new JPanel();
+	
+	private CharacterCreatorHCI window;
 	
 	public MenuHCI() {
 		 // Set window title
@@ -62,16 +67,26 @@ public class MenuHCI extends JFrame {
 		
 		this.menu.setBackground(Color.WHITE);
 		
-		this.setContentPane(pan);
+		this.setContentPane(menu);
 		
-		GridLayout grid = new GridLayout(ROW_COUNT, COLUMN_COUNT);
-		menu.setLayout(grid);
+		//GridLayout grid = new GridLayout(ROW_COUNT, COLUMN_COUNT);
+		//menu.setLayout(grid);
+		
+
 		
 		menu.add(gameButton);
 		menu.add(exitButton);
 		
-		
+		gameButton.addActionListener(this);
 		this.setVisible(true);
 	}
+	
+	public void actionPerformed(ActionEvent arg0)
+	{
+		//Allow to change window when we click on button
+		this.dispose();
+		window = new CharacterCreatorHCI();
+	}
+	
 	
 }
