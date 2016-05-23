@@ -2,8 +2,6 @@ package fr.iutvalence.info.dut.m2107.HCI;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;

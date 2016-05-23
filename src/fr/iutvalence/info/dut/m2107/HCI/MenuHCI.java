@@ -1,8 +1,14 @@
 package fr.iutvalence.info.dut.m2107.HCI;
 
+import java.awt.Color;
+import java.awt.GridLayout;
+
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import fr.iutvalence.info.dut.m2107.Panel;
+import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
+import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 
 public class MenuHCI extends JFrame {
 
@@ -30,6 +36,11 @@ public class MenuHCI extends JFrame {
 	 */
 	private static int WINDOW_SIZE_Y = 800;
 	
+	public CreateNewGameButton gameButton = new CreateNewGameButton("Commencer une nouvelle partie");
+	public ExitButton exitButton = new ExitButton("Quitter le jeu");
+	
+	public JPanel menu = new JPanel();
+	
 	public MenuHCI() {
 		 // Set window title
 		this.setTitle("Walkyries");
@@ -49,7 +60,18 @@ public class MenuHCI extends JFrame {
 		//If true : the window is always on top, all applications could be hide because of this method
 		this.setAlwaysOnTop(false);
 		
+		this.menu.setBackground(Color.WHITE);
 		
+		this.setContentPane(pan);
+		
+		GridLayout grid = new GridLayout(ROW_COUNT, COLUMN_COUNT);
+		menu.setLayout(grid);
+		
+		menu.add(gameButton);
+		menu.add(exitButton);
+		
+		
+		this.setVisible(true);
 	}
 	
 }

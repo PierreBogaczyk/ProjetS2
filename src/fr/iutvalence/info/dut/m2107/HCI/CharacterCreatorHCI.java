@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
+import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 
 public class CharacterCreatorHCI extends JFrame
 {
