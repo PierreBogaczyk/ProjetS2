@@ -19,14 +19,9 @@ public class Area {
 		this.areaType = type;
 		this.areaName = name;
 		this.areaNPC = npcList;
-		this.NPCCount = areaNPC.size();
+		this.NPCCount = this.areaNPC.size();
 		this.connectedArea = connectedArea;
 		this.connectedAreaCount = connectedArea.size();
-	}
-	
-	public void endCombat()
-	{
-		
 	}
 	
 	public ArrayList<NPC> getAreaNPC()
@@ -42,5 +37,10 @@ public class Area {
 	public int getConnectedAreaCount()
 	{
 		return this.connectedAreaCount;
+	}
+	
+	public ArrayList<Area> getConnectedAreaList()
+	{
+		return this.connectedArea;
 	}
 }

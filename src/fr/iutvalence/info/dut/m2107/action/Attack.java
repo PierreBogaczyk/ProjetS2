@@ -9,8 +9,9 @@ public class Attack extends Skill{
 	
 	
 	/**
-	 * @param skillName
-	 * @param skillDamage
+	 * Create a new attack skill
+	 * @param skillName name of the skill
+	 * @param skillDamage damage of the attack
 	 */
     public Attack(String skillName, int skillDamage)
     {
@@ -20,6 +21,9 @@ public class Attack extends Skill{
 
 
 
+	/**
+	 * @return The damage done by an attack skill
+	 */
 	public int getSkillDamage()
 	{
 		return this.skillDamage;

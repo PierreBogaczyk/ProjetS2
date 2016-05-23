@@ -6,7 +6,7 @@ public class Item {
 	/**
 	 * Type of item
 	 */
-	private String itemType;
+	private ItemType itemType;
 	/**
 	 * Value of item
 	 */
@@ -26,7 +26,7 @@ public class Item {
 	 * @param itemType type of item
 	 * @param itemValue value of item
 	 */
-	public Item (int idItem, String itemType, int itemValue) {
+	public Item (int idItem, ItemType itemType, int itemValue) {
 		
 		this.idItem=idItem;
 		this.itemType=itemType;

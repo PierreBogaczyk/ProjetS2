@@ -42,40 +42,23 @@ public class Character {
 	}
 	
 	
-	public void startFight()
+	public void startCombat()
 	{
-		Enemy[] enemyTeam = new Enemy[currentArea.getNPCCount()];
-		for(int i = 0; i< currentArea.getAreaNPC().size();i++)
+		Enemy[] enemyTeam = new Enemy[this.currentArea.getNPCCount()];
+		for(int i = 0; i< this.currentArea.getAreaNPC().size();i++)
 		{
-			if(currentArea.getAreaNPC().get(i) instanceof Enemy)
-			{
-				enemyTeam[0] = (Enemy) currentArea.getAreaNPC().get(i);
-			}
+			enemyTeam[0] = (Enemy) this.currentArea.getAreaNPC().get(i);	
 		}
-		while(this.isFightOver(enemyTeam))
-		{
-			Skill chosenSkill = this.chooseAction();
-			for(int i = 0;  i < currentArea.getNPCCount(); i++)
-			{
-				enemyTeam[i].performAction(this,chosenSkill);
-			}
-		}
+		Combat combat = new Combat(this,enemyTeam,this.currentArea);
+		combat.launchCombat();
 	}
 	
-	private Skill chooseAction() {
+	public Skill chooseAction() {
 		//TODO method allowing the player to choose an action
-		return new Skill("Default");
+		return new Skill("Placeholder");
 	}
 
 
-	private boolean isFightOver(Enemy[] enemyTeam) {
-		for(int i = 0;i < currentArea.getAreaNPC().size();i++)
-		{
-			if(enemyTeam[i].getEnemyHealth() > 0) return false;
-		}
-		if(this.getCharacterHealth() > 0) return false;
-		return true;
-	}
 
 
 	/***
