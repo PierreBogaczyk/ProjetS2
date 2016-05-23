@@ -41,7 +41,9 @@ public class Character {
 		this.characterHealth = characterHealth;
 	}
 	
-	
+	/**
+	 * start a fight
+	 */
 	public void startCombat()
 	{
 		Enemy[] enemyTeam = new Enemy[this.currentArea.getNPCCount()];
@@ -52,15 +54,24 @@ public class Character {
 		Combat combat = new Combat(this,enemyTeam,this.currentArea);
 		combat.launchCombat();
 	}
-	
+	/**
+	 * choose action
+	 * @return skill
+	 */
 	public Skill chooseAction() {
 		//TODO method allowing the player to choose an action
 		return new Skill("Placeholder");
 	}
-
-
-
-
+	/**
+	 * allow to change area
+	 * @return currentArea 
+	 */
+	public Area ChangeArea() {
+		 this.currentArea = new Area(null, characterName, null, null);
+		
+	
+		return this.currentArea;
+	}
 	/***
 	 * show Health of character
 	 * @return CharacterHealth
