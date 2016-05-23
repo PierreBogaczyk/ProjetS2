@@ -19,7 +19,7 @@ import fr.iutvalence.info.dut.m2107.HCI.button.MoveButton;
  * @author MickaelPrades
  *
  */
-public class HCI extends JFrame
+public class GameHCI extends JFrame
 {
 	/**
 	 * row count for grid layout
@@ -54,7 +54,7 @@ public class HCI extends JFrame
 	public JPanel listPart = new JPanel();
 	public JPanel displayComponent = new JPanel();
 
-	public HCI(){
+	public GameHCI(){
 		
 		 
 		 // Set window title

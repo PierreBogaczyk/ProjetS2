@@ -1,6 +1,6 @@
 package fr.iutvalence.info.dut.m2107;
 
-import fr.iutvalence.info.dut.m2107.HCI.HCI;
+import fr.iutvalence.info.dut.m2107.HCI.GameHCI;
 
 
 
@@ -38,7 +38,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		HCI window = new HCI();
+		GameHCI window = new GameHCI();
 		
 	}
 
