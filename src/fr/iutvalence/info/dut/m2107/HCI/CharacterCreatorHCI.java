@@ -1,6 +1,15 @@
 package fr.iutvalence.info.dut.m2107.HCI;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GradientPaint;
 
 import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
@@ -27,7 +36,9 @@ public class CharacterCreatorHCI extends JFrame
 	 * pan is an object of Panel
 	 */
 	public Panel pan = new Panel();
-	
+	private JPanel container = new JPanel();
+	private JTextField jtf = new JTextField("Francis");
+	private JLabel label = new JLabel("Nom du personnage");
 	/**
 	 * width of HCI window
 	 */
@@ -60,7 +71,27 @@ public class CharacterCreatorHCI extends JFrame
 		//If true : the window is always on top, all applications could be hide because of this method
 		this.setAlwaysOnTop(false);
 		
-		
+		container.setBackground(Color.white);
+
+	    container.setLayout(new BorderLayout());
+
+	    Panel top = new Panel();
+
+	    Font police = new Font("Arial", Font.BOLD, 14);
+
+	    jtf.setFont(police);
+
+	    jtf.setPreferredSize(new Dimension(150, 30));
+
+	    jtf.setForeground(Color.PINK);
+
+	    top.add(label);
+
+	    top.add(jtf);
+
+	    container.add(top, BorderLayout.NORTH);
+
+	    this.setContentPane(container);
 		this.setVisible(true);
 	}
 	

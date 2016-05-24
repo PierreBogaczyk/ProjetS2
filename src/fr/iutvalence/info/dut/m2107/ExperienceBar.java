@@ -8,14 +8,8 @@ public class ExperienceBar {
 	//TODO add attributes and methods 
 	private int currentExperienceAmount;
 	private int maxExperienceAmount;
-	private static final int Empty_currentExperienceAmount=0;
-	/**
-	 * create empty bar 
-	 */
-	public void emptyBar()
-	{
-		this.currentExperienceAmount=Empty_currentExperienceAmount;
-	}
+	private static final int DEFAULT_EXPERIENCE_AMOUNT=0;
+	
 	/**
 	 * create bar with number of experience and max experience of bar
 	 * @param currentExperienceAmount
@@ -23,7 +17,7 @@ public class ExperienceBar {
 	 */
 	public ExperienceBar(int currentExperienceAmount, int maxExperienceAmount)
 	{
-		this.currentExperienceAmount = currentExperienceAmount;
+		this.currentExperienceAmount = DEFAULT_EXPERIENCE_AMOUNT;
 		this.maxExperienceAmount = maxExperienceAmount;
 	}
 /**
@@ -40,20 +34,12 @@ public class ExperienceBar {
 	 */
 	public void Levelup(Character player){
 		if(this.currentExperienceAmount>=this.maxExperienceAmount){
-			this.currentExperienceAmount=Empty_currentExperienceAmount+(this.maxExperienceAmount-this.currentExperienceAmount);
-			player.setCharacterLevel(getCharacterLevel() + 1);		
+			this.currentExperienceAmount=DEFAULT_EXPERIENCE_AMOUNT+(this.maxExperienceAmount-this.currentExperienceAmount);
+			player.setCharacterLevel(player.getCharacterLevel() + 1);		
 		}
 		
 	
 	}
-/**
- * show character level
- * @return
- */
-	private int getCharacterLevel() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
+
 	
 }
