@@ -6,6 +6,11 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+/**
+ * It is the class to close the application
+ * @author MickaelPrades
+ *
+ */
 public class ExitButton extends JButton implements MouseListener
 {
 	private String name;

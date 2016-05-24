@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import fr.iutvalence.info.dut.m2107.Panel;
-import fr.iutvalence.info.dut.m2107.HCI.button.CreateNewGameButton;
+import fr.iutvalence.info.dut.m2107.HCI.button.GoToNextWindowButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 
 /**
@@ -39,7 +39,7 @@ public class MenuHCI extends JFrame implements ActionListener {
 	 */
 	private static int WINDOW_SIZE_Y = 800;
 	
-	public CreateNewGameButton gameButton = new CreateNewGameButton("Commencer une nouvelle partie");
+	public GoToNextWindowButton gameButton = new GoToNextWindowButton("Commencer une nouvelle partie");
 	public ExitButton exitButton = new ExitButton("Quitter le jeu");
 	
 	public JPanel menu = new JPanel();
@@ -69,9 +69,10 @@ public class MenuHCI extends JFrame implements ActionListener {
 		
 		this.setContentPane(menu);
 		
-		//GridLayout grid = new GridLayout(ROW_COUNT, COLUMN_COUNT);
-		//menu.setLayout(grid);
+		menu.setLayout(null);
 		
+		gameButton.setBounds(300, 150, 400, 150);
+		exitButton.setBounds(325, 450, 350, 150);
 
 		
 		menu.add(gameButton);

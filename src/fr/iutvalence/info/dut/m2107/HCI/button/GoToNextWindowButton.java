@@ -5,11 +5,16 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-public class CreateNewGameButton extends JButton implements MouseListener
+/**
+ * It is a class for change window with a button
+ * @author MickaelPrades
+ *
+ */
+public class GoToNextWindowButton extends JButton implements MouseListener
 {
 	private String name;
 	
-	public CreateNewGameButton(String str)
+	public GoToNextWindowButton(String str)
 	{
 		super(str);
 		this.name = str;
