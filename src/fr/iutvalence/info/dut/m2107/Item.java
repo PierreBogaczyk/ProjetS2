@@ -1,6 +1,10 @@
 package fr.iutvalence.info.dut.m2107;
 import java.util.ArrayList;
-
+/**
+ * create call item
+ * @author delarbrm
+ *
+ */
 public class Item {
 	//TODO add attributes and methods 
 	/**
@@ -26,29 +30,30 @@ public class Item {
 	 * @param itemType type of item
 	 * @param itemValue value of item
 	 */
-	public Item (int idItem, ItemType itemType, int itemValue) {
+	public Item (int idItem, ItemType itemType, int itemValue,ArrayList<Characteristic> itemCharacteristic) {
 		
 		this.idItem=idItem;
 		this.itemType=itemType;
 		this.itemValue=itemValue;
-		
+		this.itemCharacteristic=itemCharacteristic;	
 	}
 	
-	/**
-	 * Allow to equip the item	 
-	 */
-	public void equipItem () {
+/**
+ * allow to equip item
+ * @return itemValue
+ */
+	public int equipItem () {
 		
-		
-		
+		return this.itemValue;		
 	}
 	
 	/**
 	 * Allow to use the item
+	 * @return  itemValue
 	 */
-	public void useItem () {
+	public int useItem () {
 		
-		
+		return this.itemValue;
 		
 	}
 	

@@ -67,7 +67,7 @@ public class Character {
 	 * @return currentArea 
 	 */
 	public Area ChangeArea() {
-		 this.currentArea = new Area(null, characterName, null, null);
+		 this.currentArea = new Area(null, this.characterName, null, null);
 		
 	
 		return this.currentArea;
