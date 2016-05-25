@@ -103,7 +103,7 @@ public class GameHCI extends JFrame
 		actionMenu.add(inventoryButton);
 		actionMenu.add(menuButton);
 		
-
+		
 		/**
 		 * Allow to display the window
 		 */

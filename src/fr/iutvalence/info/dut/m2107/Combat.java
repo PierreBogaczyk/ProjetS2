@@ -5,13 +5,13 @@ import fr.iutvalence.info.dut.m2107.action.Skill;
 public class Combat
 {
 	private Character character;
-	private Enemy[] enemyTeam;
+	private Enemy enemy;
 	private Area fightArea;
 	
-	public Combat(Character character,Enemy[] enemyTeam,Area fightArea)
+	public Combat(Character character,Enemy enemy,Area fightArea)
 	{
 		this.character = character;
-		this.enemyTeam = enemyTeam;
+		this.enemy = enemy;
 		this.fightArea = fightArea;
 	}
 
@@ -28,10 +28,7 @@ public class Combat
 			}
 			else
 			{
-				for(int i = 0;  i < this.fightArea.getNPCCount(); i++)
-				{
-					enemyTeam[i].performAction(this.character,chosenSkill);
-				}
+				enemy.performAction(this.character,chosenSkill);
 			}
 			isPlayerTurn = !(isPlayerTurn);
 		}
@@ -39,10 +36,7 @@ public class Combat
     }
 	private boolean isCombatOver()
 	{
-		for(int i = 0;i < this.fightArea.getAreaNPC().size();i++)
-		{
-			if(this.enemyTeam[i].getEnemyHealth() > 0) return false;
-		}
+		if(this.enemy.getEnemyHealth() > 0) return false;
 		if(this.character.getCharacterHealth() > 0) return false;
 		return true;
 	}

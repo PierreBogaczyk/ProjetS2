@@ -36,11 +36,10 @@ public class Character {
 	{
 		this.characterName = characterName;
 		this.characterLevel = DEFAULT_LEVEL;
-		this.currentArea =new Area(AreaType.TOWN,"Tavern",null,null);
+		this.currentArea =new Area(AreaType.TOWN,"Tavern",new NPC("Tavern Owner"));
 		this.characterExperience = new ExperienceBar(0,100);
 		this.characterJob = characterJob;
 		this.characterInventory = new Inventory();
-		this.characterHealth = characterHealth;
 		switch(this.characterJob.getJobName())
 		{
 			case("Warrior"):{ this.characterHealth = DEFAULT_HEALTH_WARRIOR; }
@@ -54,12 +53,8 @@ public class Character {
 	 */
 	public void startCombat()
 	{
-		Enemy[] enemyTeam = new Enemy[this.currentArea.getNPCCount()];
-		for(int i = 0; i< this.currentArea.getAreaNPC().size();i++)
-		{
-			enemyTeam[0] = (Enemy) this.currentArea.getAreaNPC().get(i);	
-		}
-		Combat combat = new Combat(this,enemyTeam,this.currentArea);
+		Enemy enemy= (Enemy) this.currentArea.getAreaNPC();	
+		Combat combat = new Combat(this,enemy,this.currentArea);
 		combat.launchCombat();
 	}
 	/**
@@ -75,7 +70,7 @@ public class Character {
 	 * @return currentArea 
 	 */
 	public Area ChangeArea() {
-		 this.currentArea = new Area(null, this.characterName, null, null);
+		 this.currentArea = new Area(null, this.characterName, null);
 		
 	
 		return this.currentArea;

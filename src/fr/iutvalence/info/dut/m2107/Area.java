@@ -7,31 +7,19 @@ public class Area {
 	
 	private String areaName;
 	
-	private ArrayList<NPC> areaNPC;
-	
-	private int NPCCount;
-
-	private ArrayList<Area> connectedArea;
+	private NPC areaNPC;
 	
 	private int connectedAreaCount;
-	public Area(AreaType type, String name,ArrayList<NPC> npcList,ArrayList<Area> connectedArea)
+	public Area(AreaType type, String name,NPC npc)
 	{
 		this.areaType = type;
 		this.areaName = name;
-		this.areaNPC = npcList;
-		this.NPCCount = this.areaNPC.size();
-		this.connectedArea = connectedArea;
-		this.connectedAreaCount = connectedArea.size();
+		this.areaNPC = npc;
 	}
 	
-	public ArrayList<NPC> getAreaNPC()
+	public NPC getAreaNPC()
 	{
 		return this.areaNPC;
-	}
-	
-	public int getNPCCount()
-	{
-		return this.NPCCount;
 	}
 	
 	public int getConnectedAreaCount()
@@ -39,8 +27,4 @@ public class Area {
 		return this.connectedAreaCount;
 	}
 	
-	public ArrayList<Area> getConnectedAreaList()
-	{
-		return this.connectedArea;
-	}
 }
