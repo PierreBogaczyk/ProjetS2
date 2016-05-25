@@ -16,7 +16,7 @@ public class Item {
 	 */
 	private int itemValue;
 	/**
-	 * I don't know
+	 * Characteristic of item
 	 */
 	private ArrayList<Characteristic> itemCharacteristic;
 	/**

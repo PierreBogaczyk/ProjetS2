@@ -8,6 +8,11 @@ import fr.iutvalence.info.dut.m2107.action.Skill;
  *
  */
 public class Character {
+	
+	private static final int DEFAULT_LEVEL = 1;
+	private static final int DEFAULT_HEALTH_WARRIOR = 120;
+	private static final int DEFAULT_HEALTH_WIZARD = 80;
+	private static final int DEFAULT_HEALTH_ROGUE = 100;
 	private String characterName;
 	private int characterLevel;
 	private Area currentArea;
@@ -27,18 +32,21 @@ public class Character {
 	 * @param characterInventory
 	 * @param characterHealth
 	 */
-	public Character(String characterName, int characterLevel, Area currentArea,
-			ArrayList<Characteristic> characterCharacteristicList, ExperienceBar characterExperience, Job characterJob,
-			Inventory characterInventory, int characterHealth)
+	public Character(String characterName, Job characterJob)
 	{
 		this.characterName = characterName;
-		this.characterLevel = characterLevel;
-		this.currentArea = currentArea;
-		this.characterCharacteristicList = characterCharacteristicList;
-		this.characterExperience = characterExperience;
+		this.characterLevel = DEFAULT_LEVEL;
+		this.currentArea =new Area(AreaType.TOWN,"Tavern",null,null);
+		this.characterExperience = new ExperienceBar(0,100);
 		this.characterJob = characterJob;
-		this.characterInventory = characterInventory;
+		this.characterInventory = new Inventory();
 		this.characterHealth = characterHealth;
+		switch(this.characterJob.getJobName())
+		{
+			case("Warrior"):{ this.characterHealth = DEFAULT_HEALTH_WARRIOR; }
+			case("Wizard"):{ this.characterHealth = DEFAULT_HEALTH_WIZARD;}
+			case("Rogue"):{ this.characterHealth = DEFAULT_HEALTH_ROGUE;}
+		}
 	}
 	
 	/**

@@ -19,6 +19,7 @@ import fr.iutvalence.info.dut.m2107.HCI.button.MoveButton;
  */
 public class GameHCI extends JFrame
 {
+	private Character character;
 	/**
 	 * row count for grid layout
 	 */
@@ -52,9 +53,9 @@ public class GameHCI extends JFrame
 	public JPanel listPart = new JPanel();
 	public JPanel displayComponent = new JPanel();
 
-	public GameHCI(){
+	public GameHCI(Character character){
 		
-		 
+		 this.character = character;
 		 // Set window title
 		this.setTitle("Walkyries");
 		

@@ -47,8 +47,12 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	private JPanel container = new JPanel();
 	private JPanel buttonRadioContainer = new JPanel();
 	private JPanel validationButtonContainer = new JPanel();
-	private JTextField jtf = new JTextField("Insérer le nom du personnage");
+	private JTextField characterName = new JTextField("Insérer le nom du personnage");
 	private JLabel label = new JLabel("Nom du personnage");
+    private JRadioButton buttonClassOne = new JRadioButton("Warrior");
+    private JRadioButton buttonClassTwo = new JRadioButton("Wizard");
+    private JRadioButton buttonClassThree = new JRadioButton("Wrogue");
+	
 	/**
 	 * width of HCI window
 	 */
@@ -96,12 +100,12 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    Panel top = new Panel();
 	    Font police = new Font("Arial", Font.BOLD, 14);
 
-	    jtf.setFont(police);
-	    jtf.setPreferredSize(new Dimension(150, 30));
-	    jtf.setForeground(Color.PINK);
+	    characterName.setFont(police);
+	    characterName.setPreferredSize(new Dimension(150, 30));
+	    characterName.setForeground(Color.PINK);
 
 	    top.add(label);
-	    top.add(jtf);
+	    top.add(characterName);
 
 	    container.add(top, BorderLayout.NORTH);
 	    this.setContentPane(container);
@@ -110,9 +114,7 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    
 	    Panel panTop = new Panel();
 	    
-	    JRadioButton buttonClassOne = new JRadioButton("Première classe");
-	    JRadioButton buttonClassTwo = new JRadioButton("Deuxième classe");
-	    JRadioButton buttonClassThree = new JRadioButton("Troisième classe");
+
 	    panTop.add(buttonClassOne);
 	    panTop.add(buttonClassTwo);
 	    panTop.add(buttonClassThree);
@@ -134,12 +136,26 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    
 	    validationButton.addActionListener(this);
 		this.setVisible(true);
+		
 	}
-	
+	public String getJob(){
+
+        if (buttonClassOne.isSelected())
+            return (buttonClassOne.getText());
+        else if (buttonClassTwo.isSelected())
+            return (buttonClassTwo.getText());
+        else if (buttonClassThree.isSelected())
+        	return (buttonClassThree.getText());
+        else
+        	return (buttonClassOne.getText()); 
+
+      }
 	public void actionPerformed(ActionEvent arg0)
 	{
+		System.out.println(characterName.getText() + getJob());
+		
 		this.dispose();
-		window = new GameHCI();
+		window = new GameHCI(new Character(characterName.getText(),new Job(getJob())));
 	}
 	
 }

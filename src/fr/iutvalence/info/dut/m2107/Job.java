@@ -9,37 +9,27 @@ public class Job {
 	/**
 	 * job attribute
 	 */
-	public String job;
+	public String jobName;
 	/**
 	 * job by default
 	 */
-	public final static String Default_job=null;
+	public final static String DEFAULT_JOB=null;
 /**
  * allow a job
  */
 	public Job(){
-		this.job=Default_job;
+		this.jobName=DEFAULT_JOB;
 		}
 	/**
 	 * allow a define Job
 	 * @param Job
 	 */
-	public Job(String Job){
-		this.job=Job;
-	}
-	/**
-	 * allow to add a job
-	 * @param Job
-	 */
-	public void addjob(String Job){
-		this.job=Job	;
-	}
-	/**
-	 * allow to remove a job
-	 */
-	public void removejob(){
-		this.job=Default_job;
+	public Job(String jobName){
+		this.jobName=jobName;
 	}
 	
-	
+	public String getJobName()
+	{
+		return this.jobName;
+	}
 }

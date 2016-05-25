@@ -37,7 +37,8 @@ public class ExperienceBar {
 			this.currentExperienceAmount=DEFAULT_EXPERIENCE_AMOUNT+(this.maxExperienceAmount-this.currentExperienceAmount);
 			player.setCharacterLevel(player.getCharacterLevel() + 1);		
 		}
-		
+		this.currentExperienceAmount = 0;
+		this.maxExperienceAmount = this.maxExperienceAmount * 2;
 	
 	}
 
