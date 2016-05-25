@@ -7,11 +7,8 @@ import java.util.ArrayList;
 
 /**
  * create class job
- * @author delarbrm
- *
  */
 public class Job {
-	//TODO add attributes and methods
 	/**
 	 * job attribute
 	 */
@@ -22,7 +19,7 @@ public class Job {
 	 */
 	public final static String DEFAULT_JOB=null;
 /**
- * allow a job
+ *  Define player job and his skills available
  */
 	public Job(String jobName){
 		
@@ -48,9 +45,14 @@ public class Job {
 					jobSkill.add(new HealingSpell ("Health giver",15));
 					jobSkill.add(new Attack ("Lightning strike",30));
 					break;
+
 			} 
 	}
 	
+	/**
+	 * get job name
+	 * @return job name
+	 */
 	public String getJobName()
 	{
 		return this.jobName;

@@ -2,23 +2,27 @@ package fr.iutvalence.info.dut.m2107;
 import java.util.ArrayList;
 /**
  * create class inventory
- * @author delarbrm
- *
  */
 public class Inventory {
-	//TODO add attributes and methods
+	
 	/**
 	 * number of slot for inventory
 	 */
 	private int inventorySlotsCount;
-	private static final int DefaultinventorySlotsCount=0;
+	/**
+	 * number of slot by default in inventory
+	 */
+	private static final int DEFAULT_INVENTORY_SLOT_COUNT=0;
+	/**
+	 * List of item in inventory
+	 */
 	private ArrayList<Item> itemInInventory;
 	
 	/**
 	 * Constructor of Inventory
 	 */
 	public Inventory () {
-		this.inventorySlotsCount=DefaultinventorySlotsCount;
+		this.inventorySlotsCount=DEFAULT_INVENTORY_SLOT_COUNT;
 	}
 	/**
 	 * define inventory

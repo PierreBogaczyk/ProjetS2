@@ -2,11 +2,9 @@ package fr.iutvalence.info.dut.m2107;
 import java.util.ArrayList;
 /**
  * create call item
- * @author delarbrm
- *
  */
 public class Item {
-	//TODO add attributes and methods 
+ 
 	/**
 	 * Type of item
 	 */
@@ -38,15 +36,6 @@ public class Item {
 		this.itemCharacteristic=itemCharacteristic;	
 	}
 	
-/**
- * allow to equip item
- * @return itemValue
- */
-	public int equipItem () {
-		
-		return this.itemValue;		
-	}
-	
 	/**
 	 * Allow to use the item
 	 * @return  itemValue
@@ -54,7 +43,6 @@ public class Item {
 	public int useItem () {
 		
 		return this.itemValue;
-		
 	}
 	
 }
