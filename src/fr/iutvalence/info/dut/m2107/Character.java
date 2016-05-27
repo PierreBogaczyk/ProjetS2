@@ -36,7 +36,7 @@ public class Character {
 	{
 		this.characterName = characterName;
 		this.characterLevel = DEFAULT_LEVEL;
-		this.currentArea =new Area(AreaType.TOWN,"Tavern",new NPC("Tavern Owner"));
+		this.currentArea =new Area("Tavern");
 		this.characterExperience = new ExperienceBar(0,100);
 		this.characterJob = characterJob;
 		this.characterInventory = new Inventory();

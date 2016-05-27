@@ -8,26 +8,30 @@ public class Area {
 	private String areaName;
 	
 	private NPC areaNPC;
-	
-	private int connectedAreaCount;
-	public Area(AreaType type, String name,NPC npc)
+
+	public Area(String name)
 	{
-		this.areaType = type;
 		this.areaName = name;
 		switch(name){
-			case("Tavern"):{this.areaNPC = new NPC( )}
+			case("Tavern"):{
+				this.areaNPC = new NPC("Tavern Keeper");
+				this.areaType = areaType.TOWN;
+						   }
+			case("Shop"):{
+				this.areaNPC = new Merchant("Merchant",new ArrayList<Item>());
+				this.areaType = areaType.TOWN;				
+						 }
+			case("Dungeon"):{
+				this.areaNPC = new Enemy("Foe",200);
+				this.areaType = areaType.DUNGEON;
+						 }
 		}
-		this.areaNPC = npc;
 	}
 	
 	public NPC getAreaNPC()
 	{
 		return this.areaNPC;
 	}
-	
-	public int getConnectedAreaCount()
-	{
-		return this.connectedAreaCount;
-	}
+
 	
 }

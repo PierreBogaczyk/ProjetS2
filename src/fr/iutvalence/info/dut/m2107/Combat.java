@@ -24,7 +24,7 @@ public class Combat
 			Skill chosenSkill = null;
 			if(isPlayerTurn)
 			{
-				chosenSkill = character.chooseAction();
+				chosenSkill = character.chooseAction(null);
 			}
 			else
 			{
