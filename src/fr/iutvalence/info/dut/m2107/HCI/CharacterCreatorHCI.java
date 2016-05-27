@@ -18,6 +18,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import fr.iutvalence.info.dut.m2107.Character;
+import fr.iutvalence.info.dut.m2107.Job;
 import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.GoToNextWindowButton;

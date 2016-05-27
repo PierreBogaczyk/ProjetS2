@@ -61,19 +61,24 @@ public class Character {
 	 * choose action
 	 * @return skill
 	 */
-	public Skill chooseAction() {
-		//TODO method allowing the player to choose an action
-		return new Skill("Placeholder");
+	public Skill chooseAction(String skillName) {
+		for(int i = 0; i<this.characterJob.getJobSkillList().size();i++)
+		{
+			if(this.characterJob.getJobSkillList().get(i).getSkillName() == skillName)
+			{
+				return this.characterJob.getJobSkillList().get(i);
+			}
+		}
+		return new Skill("Inexistent Skill");
 	}
 	/**
 	 * allow to change area
 	 * @return currentArea 
 	 */
-	public Area ChangeArea() {
-		 this.currentArea = new Area(null, this.characterName, null);
+	public void ChangeArea(String areaName) {
 		
-	
-		return this.currentArea;
+		this.currentArea = new Area(areaName);
+		
 	}
 	/***
 	 * show Health of character
@@ -104,7 +109,7 @@ public class Character {
 	 * @param i
 	 */
 	public void setCharacterLevel(int i) {
-		// TODO Auto-generated method stub
+		this.characterLevel = i;
 		
 	}
 	/**
