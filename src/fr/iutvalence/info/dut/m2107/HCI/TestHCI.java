@@ -11,5 +11,4 @@ public class TestHCI {
 		Character character = new Character("Francis", new Job("Warrior"));
 		GameHCI window = new GameHCI(character);
 	}
-
 }

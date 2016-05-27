@@ -40,12 +40,11 @@ public class Character {
 		this.characterExperience = new ExperienceBar(0,100);
 		this.characterJob = characterJob;
 		this.characterInventory = new Inventory();
-		switch(characterJob.getJobName())
+		switch(this.characterJob.getJobName())
 		{
-			case("Warrior"):{ this.characterHealth = DEFAULT_HEALTH_WARRIOR; }
+			case("Warrior"):{ this.characterHealth = DEFAULT_HEALTH_WARRIOR;}
 			case("Wizard"):{ this.characterHealth = DEFAULT_HEALTH_WIZARD;}
 			case("Rogue"):{ this.characterHealth = DEFAULT_HEALTH_ROGUE;}
-			
 		}
 	}
 	

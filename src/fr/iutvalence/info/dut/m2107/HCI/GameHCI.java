@@ -93,13 +93,13 @@ public class GameHCI extends JFrame
 		splitPane.setDividerLocation(550);
 		splitPane.setEnabled(false);
 		splitPane.setDividerSize(1);
-
+		
 		this.setContentPane(splitPane);
 		
 		GridLayout grid = new GridLayout(ROW_COUNT,COLUMN_COUNT);
 		actionMenu.setLayout(grid);
 		
-
+		
 		actionMenu.add(actionButton);
 		actionMenu.add(moveButton);
 		actionMenu.add(inventoryButton);

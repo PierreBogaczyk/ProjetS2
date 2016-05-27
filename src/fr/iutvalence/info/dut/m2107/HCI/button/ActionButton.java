@@ -3,15 +3,17 @@ package fr.iutvalence.info.dut.m2107.HCI.button;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.LayoutManager;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.iutvalence.info.dut.m2107.HCI.GameHCI;
 
-public class ActionButton extends JButton implements MouseListener
+public class ActionButton extends JButton implements ActionListener
 {
 	private String name;
 	
@@ -26,6 +28,8 @@ public class ActionButton extends JButton implements MouseListener
 		this.name = str;
 	}
 
+	
+	
 	@Override
 	public void mouseClicked(MouseEvent e)
 	{
@@ -37,31 +41,5 @@ public class ActionButton extends JButton implements MouseListener
 		//TODO régler le problème avec l'affichage du label (ne s'affiche pas) pour y mettre un bouton
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void mouseExited(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
 }

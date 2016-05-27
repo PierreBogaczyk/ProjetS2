@@ -53,7 +53,7 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	private JLabel label = new JLabel("Nom du personnage");
     private JRadioButton buttonClassOne = new JRadioButton("Warrior");
     private JRadioButton buttonClassTwo = new JRadioButton("Wizard");
-    private JRadioButton buttonClassThree = new JRadioButton("Wrogue");
+    private JRadioButton buttonClassThree = new JRadioButton("Rogue");
 	
 	/**
 	 * width of HCI window
