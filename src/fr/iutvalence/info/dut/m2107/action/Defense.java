@@ -1,8 +1,18 @@
 package fr.iutvalence.info.dut.m2107.action;
-
+/**
+ * class Defense 
+ * @author delarbrm
+ *
+ */
 public class Defense extends Skill{
-	//TODO add attributes and methods 
+	//TODO add attributes and methods
+	/**
+	 * name of the skill
+	 */
 	private String skillName;
+	/**
+	 * reduction of defense 
+	 */
 	private int defenseReduction;
 	/**
 	 * @param skillName
@@ -13,9 +23,13 @@ public class Defense extends Skill{
 	    super(skillName);
 	    this.defenseReduction = defenseReduction;
     }
+    /**
+     * get defense reduction
+     * @return defenseReduction
+     */
 	public int getDefenseReduction()
 	{
-		return defenseReduction;
+		return this.defenseReduction;
 	}
 	
     

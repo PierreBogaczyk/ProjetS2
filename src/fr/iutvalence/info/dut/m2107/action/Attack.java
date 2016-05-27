@@ -1,9 +1,18 @@
 package fr.iutvalence.info.dut.m2107.action;
-
+/**
+ * class attack 
+ * @author delarbrm
+ *
+ */
 public class Attack extends Skill{
 	//TODO add attributes and methods 
+	/**
+	 * name of the skill attibut
+	 */
 	private String skillName;
-	
+	/**
+	 * damage of the skill attribut
+	 */
 	private int skillDamage;
 	
 	
