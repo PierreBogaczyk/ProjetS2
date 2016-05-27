@@ -1,8 +1,19 @@
 package fr.iutvalence.info.dut.m2107.action;
-
+/**
+ * class Spell Damage
+ * @author delarbrm
+ *
+ */
 public class DamageSpell extends Spell{
-	//TODO add attributes and methods 
+	//TODO add attributes and methods
+	/**
+	 * name of the spell
+	 * 
+	 */
 	private String skillName;
+	/**
+	 * damage of the spell
+	 */
 	private int spellDamage;
 	
 	
@@ -17,7 +28,10 @@ public class DamageSpell extends Spell{
 	    this.spellDamage = spellDamage;
     }
 
-
+   /**
+    * get Damage of spell
+    * @return spellDamage
+    */
 	public int getSpellDamage()
 	{
 		return this.spellDamage;

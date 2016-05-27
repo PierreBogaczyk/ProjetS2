@@ -1,7 +1,14 @@
 package fr.iutvalence.info.dut.m2107.action;
-
+/**
+ * class skill
+ * @author delarbrm
+ *
+ */
 public class Skill {
-	//TODO add attributes and methods 
+	//TODO add attributes and methods
+	/**
+	 * name of the skill
+	 */
 	private String skillName;
 
 	/**
@@ -11,10 +18,13 @@ public class Skill {
     {
 	    this.skillName = skillName;
     }
-
+    /**
+     * get a name of the skill
+     * @return skillName
+     */
 	public String getSkillName()
 	{
-		return skillName;
+		return this.skillName;
 	}
 	
 }
