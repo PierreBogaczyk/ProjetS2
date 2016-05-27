@@ -15,7 +15,7 @@ public class Area {
 		this.areaType = type;
 		this.areaName = name;
 		switch(name){
-			case("Tavern"):{this.areaNPC = new NPC()}
+			case("Tavern"):{this.areaNPC = new NPC( )}
 		}
 		this.areaNPC = npc;
 	}

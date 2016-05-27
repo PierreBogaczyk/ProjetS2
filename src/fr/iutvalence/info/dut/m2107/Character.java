@@ -60,7 +60,7 @@ public class Character {
 	/**
 	 * choose action
 	 * @return skill
-	 */
+	 */ 
 	public Skill chooseAction(String skillName) {
 		for(int i = 0; i<this.characterJob.getJobSkillList().size();i++)
 		{

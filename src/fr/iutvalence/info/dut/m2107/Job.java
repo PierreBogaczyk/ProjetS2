@@ -24,7 +24,7 @@ public class Job {
 	public Job(String jobName){
 		
 		this.jobName=DEFAULT_JOB;
-		this.jobSkill=new ArrayList<Skill>();
+		this.jobSkill=new ArrayList<Skill>(); 
 		
 			switch (jobName){
 				
