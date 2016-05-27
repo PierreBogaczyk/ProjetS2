@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
 import fr.iutvalence.info.dut.m2107.Panel;
+import fr.iutvalence.info.dut.m2107.Character;
+import fr.iutvalence.info.dut.m2107.Job;
 import fr.iutvalence.info.dut.m2107.HCI.button.ActionButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.InventoryButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
