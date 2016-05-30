@@ -46,15 +46,15 @@ public class GameHCI extends JFrame
 	 */
 	private static int WINDOW_SIZE_Y = 800;
 	
-	public ActionButton actionButton = new ActionButton("Action");
+	public JPanel actionMenu = new JPanel();
+	public JPanel listPart = new JPanel();
+	public JPanel displayComponent = new JPanel();
+	
+	public ActionButton actionButton = new ActionButton("Action",this);
 	public MoveButton moveButton = new MoveButton("Déplacement");
 	public InventoryButton inventoryButton = new InventoryButton("Inventaire");
 	public ExitButton menuButton = new ExitButton("Sortir du jeu");
 	
-	public JPanel actionMenu = new JPanel();
-	public JPanel listPart = new JPanel();
-	public JPanel displayComponent = new JPanel();
-
 	public GameHCI(Character character){
 		
 		 this.character = character;
@@ -111,5 +111,8 @@ public class GameHCI extends JFrame
 		 */
 		this.setVisible(true);
 	}
-	
+	public ExitButton getExitButton()
+	{
+		return this.menuButton;
+	}
 }
