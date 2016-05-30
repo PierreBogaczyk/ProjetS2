@@ -68,7 +68,7 @@ public class GameHCI extends JFrame
 		this.setLocationRelativeTo(null);
 		
 		 // Set action to close the window and process when we click on the red cross
-		 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//If true : the window could be resizable, if false : not resizable 
 		this.setResizable(false);
@@ -98,18 +98,22 @@ public class GameHCI extends JFrame
 		
 		GridLayout grid = new GridLayout(ROW_COUNT,COLUMN_COUNT);
 		actionMenu.setLayout(grid);
-		
-		
-		actionMenu.add(actionButton);
-		actionMenu.add(moveButton);
-		actionMenu.add(inventoryButton);
-		actionMenu.add(menuButton);
+		GridLayout grid2 = new GridLayout(ROW_COUNT,COLUMN_COUNT);
+		listPart.setLayout(grid2);
+		actionMenu.add(this.actionButton);
+		actionMenu.add(this.moveButton);
+		actionMenu.add(this.inventoryButton);
+		actionMenu.add(this.menuButton);
 		
 		
 		/**
 		 * Allow to display the window
 		 */
 		this.setVisible(true);
+	}
+	public Character getCharacter()
+	{
+		return this.character;
 	}
 	public ExitButton getExitButton()
 	{
