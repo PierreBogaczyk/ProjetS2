@@ -37,7 +37,6 @@ public class Main {
 	finsi
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		MenuHCI window = new MenuHCI();
 		

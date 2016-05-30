@@ -40,11 +40,30 @@ public class Character {
 		this.characterExperience = new ExperienceBar(0,100);
 		this.characterJob = characterJob;
 		this.characterInventory = new Inventory();
+		this.characterCharacteristicList = new ArrayList<Characteristic>();
 		switch(this.characterJob.getJobName())
 		{
-			case("Warrior"):{ this.characterHealth = DEFAULT_HEALTH_WARRIOR;}
-			case("Wizard"):{ this.characterHealth = DEFAULT_HEALTH_WIZARD;}
-			case("Rogue"):{ this.characterHealth = DEFAULT_HEALTH_ROGUE;}
+			case("Warrior"):{ 
+				this.characterHealth = DEFAULT_HEALTH_WARRIOR;
+				this.characterCharacteristicList.add(new Characteristic("Strength",50));
+				this.characterCharacteristicList.add(new Characteristic("Endurance",50));
+				this.characterCharacteristicList.add(new Characteristic("Intelligence",50));
+				this.characterCharacteristicList.add(new Characteristic("Dexterity",50));
+							}
+			case("Wizard"):{ 
+				this.characterHealth = DEFAULT_HEALTH_WIZARD;
+				this.characterCharacteristicList.add(new Characteristic("Strength",50));
+				this.characterCharacteristicList.add(new Characteristic("Endurance",50));
+				this.characterCharacteristicList.add(new Characteristic("Intelligence",50));
+				this.characterCharacteristicList.add(new Characteristic("Dexterity",50));
+				}
+			case("Rogue"):{ 
+				this.characterHealth = DEFAULT_HEALTH_ROGUE;
+				this.characterCharacteristicList.add(new Characteristic("Strength",50));
+				this.characterCharacteristicList.add(new Characteristic("Endurance",50));
+				this.characterCharacteristicList.add(new Characteristic("Intelligence",50));
+				this.characterCharacteristicList.add(new Characteristic("Dexterity",50));
+				}
 		}
 	}
 	
@@ -142,7 +161,7 @@ public class Character {
 	 */
 	public void setCurrentArea(Area currentArea)
 	{
-		this.currentArea = currentArea;
+		this.currentArea =new Area(currentArea.getAreaName());
 	}
 	/**
 	 * 

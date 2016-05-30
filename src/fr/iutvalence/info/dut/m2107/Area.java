@@ -33,5 +33,8 @@ public class Area {
 		return this.areaNPC;
 	}
 
-	
+	public String getAreaName()
+	{
+		return this.areaName;
+	}
 }

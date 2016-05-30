@@ -36,13 +36,5 @@ public class Item {
 		this.itemCharacteristic=itemCharacteristic;	
 	}
 	
-	/**
-	 * Allow to use the item
-	 * @return  itemValue
-	 */
-	public int useItem () {
-		
-		return this.itemValue;
-	}
 	
 }
