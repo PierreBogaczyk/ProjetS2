@@ -23,9 +23,7 @@ public class ActionButton extends JButton implements MouseListener
 	
 	private JPanel p = new JPanel();
 	private JLabel label = new JLabel("yey");
-	public SkillButton skill1;
-	public SkillButton skill2;
-	public SkillButton skill3;
+
 	public ActionButton(String str,GameHCI window)
 	{
 		super(str);
@@ -44,10 +42,8 @@ public class ActionButton extends JButton implements MouseListener
 		//this.skill1 = new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(0));
 		//this.skill2 = new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(1));
 		//this.skill3 = new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(2));
-		this.window.listPart.add(new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(0)));
-		this.window.listPart.add(new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(1)));
-		this.window.listPart.add(new SkillButton(window.getCharacter().getCharacterJob().getJobSkillList().get(2)));
-		this.window.listPart.add(this.window.getExitButton());
+		this.window.addSkillButton();
+		this.window.moveMenu.add(this.window.getExitButton());
 		//TODO régler le problème avec l'affichage du label (ne s'affiche pas) pour y mettre un bouton
 	}
 

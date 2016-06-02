@@ -13,6 +13,7 @@ import fr.iutvalence.info.dut.m2107.HCI.button.ActionButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.InventoryButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.ExitButton;
 import fr.iutvalence.info.dut.m2107.HCI.button.MoveButton;
+import fr.iutvalence.info.dut.m2107.HCI.button.SkillButton;
 
 /**
  * This class is the main class for HCI, this class allow to configure window display
@@ -47,6 +48,7 @@ public class GameHCI extends JFrame
 	private static int WINDOW_SIZE_Y = 800;
 	
 	public JPanel actionMenu = new JPanel();
+	public JPanel moveMenu = new JPanel();
 	public JPanel listPart = new JPanel();
 	public JPanel displayComponent = new JPanel();
 	
@@ -54,13 +56,17 @@ public class GameHCI extends JFrame
 	public MoveButton moveButton = new MoveButton("Déplacement");
 	public InventoryButton inventoryButton = new InventoryButton("Inventaire");
 	public ExitButton menuButton = new ExitButton("Sortir du jeu");
-	
+	public SkillButton skill1;
+	public SkillButton skill2;
+	public SkillButton skill3;
 	public GameHCI(Character character){
 		
 		 this.character = character;
 		 // Set window title
 		this.setTitle("Walkyries");
-		
+		this.skill1 = new SkillButton(this.character.getCharacterJob().getJobSkillList().get(0));
+		this.skill2 = new SkillButton(this.character.getCharacterJob().getJobSkillList().get(1));
+		this.skill3 = new SkillButton(this.character.getCharacterJob().getJobSkillList().get(2));
 		//Set window size, width and height
 		this.setSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
 		
@@ -80,14 +86,13 @@ public class GameHCI extends JFrame
 		this.actionMenu.setBackground(Color.BLUE);
 		
 		//display part for action menu
-		this.listPart.setBackground(Color.CYAN);
+		this.moveMenu.setBackground(Color.CYAN);
 		
 		//menuComponent is the part for menu 
-		JSplitPane menuComponent = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, actionMenu, listPart);
+		JSplitPane menuComponent = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, actionMenu, moveMenu);
 		menuComponent.setDividerLocation(200);
 		menuComponent.setEnabled(false);
 		menuComponent.setDividerSize(1);
-		
 		//displayComponent is the picture part
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, displayComponent , menuComponent);
 		splitPane.setDividerLocation(550);
@@ -99,12 +104,14 @@ public class GameHCI extends JFrame
 		GridLayout grid = new GridLayout(ROW_COUNT,COLUMN_COUNT);
 		actionMenu.setLayout(grid);
 		GridLayout grid2 = new GridLayout(ROW_COUNT,COLUMN_COUNT);
-		listPart.setLayout(grid2);
+		moveMenu.setLayout(grid2);
 		actionMenu.add(this.actionButton);
 		actionMenu.add(this.moveButton);
 		actionMenu.add(this.inventoryButton);
 		actionMenu.add(this.menuButton);
-		
+		actionMenu.add(this.skill1);
+		actionMenu.add(this.skill2);
+		actionMenu.add(this.skill3);
 		
 		/**
 		 * Allow to display the window
@@ -118,5 +125,12 @@ public class GameHCI extends JFrame
 	public ExitButton getExitButton()
 	{
 		return this.menuButton;
+	}
+	
+	public void addSkillButton()
+	{
+		this.moveMenu.add(this.skill1);
+		this.moveMenu.add(this.skill2);
+		this.moveMenu.add(this.skill3);
 	}
 }
