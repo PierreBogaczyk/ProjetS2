@@ -1,9 +1,12 @@
 package fr.iutvalence.info.dut.m2107;
 
-import fr.iutvalence.info.dut.m2107.HCI.GameHCI;
 import fr.iutvalence.info.dut.m2107.HCI.MenuHCI;
 
-
+/**
+ * This class is the main class, allows to launch and uses application
+ * @author MickaelPrades
+ *
+ */
 
 public class Main {
 	/*

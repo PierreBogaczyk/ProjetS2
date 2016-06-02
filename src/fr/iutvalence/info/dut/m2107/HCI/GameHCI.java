@@ -47,9 +47,21 @@ public class GameHCI extends JFrame
 	 */
 	private static int WINDOW_SIZE_Y = 800;
 	
+	/**
+	 * Panel for the action menu
+	 */
 	public JPanel actionMenu = new JPanel();
+	/**
+	 * Panel for the move menu
+	 */
 	public JPanel moveMenu = new JPanel();
+	/**
+	 * Panel for the list part
+	 */
 	public JPanel listPart = new JPanel();
+	/**
+	 * Panel for the display component
+	 */
 	public JPanel displayComponent = new JPanel();
 	
 	public ActionButton actionButton = new ActionButton("Action",this);

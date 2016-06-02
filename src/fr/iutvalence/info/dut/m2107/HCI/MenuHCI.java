@@ -38,14 +38,28 @@ public class MenuHCI extends JFrame implements ActionListener {
 	 * height of HCI window
 	 */
 	private static int WINDOW_SIZE_Y = 800;
-	
+	/**
+	 * new button allows to go to the next window
+	 */
 	public GoToNextWindowButton gameButton = new GoToNextWindowButton("Commencer une nouvelle partie");
+	/**
+	 * button allows to exit the application
+	 */
 	public ExitButton exitButton = new ExitButton("Quitter le jeu");
-	
+	/**
+	 * Panel for the menu
+	 */
 	public JPanel menu = new JPanel();
-	
+	/**
+	 * window is the next window, it used by gameButton
+	 */
 	private CharacterCreatorHCI window;
 	
+	/**
+	 * Creator of MenuHCI, allows to create window and interact with users by buttons.
+	 * MenuHCI has two buttons : gameButton to go to the next window (CharacterCreatorHCI) and
+	 * exitButton to exit the application.
+	 */
 	public MenuHCI() {
 		 // Set window title
 		this.setTitle("Walkyries");
@@ -82,6 +96,9 @@ public class MenuHCI extends JFrame implements ActionListener {
 		this.setVisible(true);
 	}
 	
+	/**
+	 * This method allows to interact with gameButton
+	 */
 	public void actionPerformed(ActionEvent arg0)
 	{
 		//Allow to change window when we click on button

@@ -2,6 +2,8 @@ package fr.iutvalence.info.dut.m2107.HCI;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,7 +28,7 @@ import fr.iutvalence.info.dut.m2107.HCI.button.GoToNextWindowButton;
 
 /**
  * This class is HCI for character creator, it allows to write/choose informations and 
- * to access the game
+ * to access the game.
  * @author MickaelPrades
  *
  */
@@ -45,14 +47,48 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	 * pan is an object of Panel
 	 */
 	public Panel pan = new Panel();
+	/**
+	 * mainContainer is the panel allows to regroup many others.
+	 */
 	private JPanel mainContainer = new JPanel();
+	/**
+	 * 
+	 */
 	private JPanel container = new JPanel();
+	/**
+	 * imageContainer is the panel for images
+	 */
+	private JPanel imageContainer = new JPanel();
+	/**
+	 * buttonRadioContainer is the panel with aim to regroup radio buttons (see further)
+	 */
 	private JPanel buttonRadioContainer = new JPanel();
+	/**
+	 * validationButtonContainer is the panel for the validation button (allows to go into the game)
+	 */
 	private JPanel validationButtonContainer = new JPanel();
+	
+	/**
+	 * This JTextField is the text field for write the name of the character.
+	 */
 	private JTextField characterName = new JTextField("Insérer le nom du personnage");
+	/**
+	 * label is the label before the text field
+	 */
 	private JLabel label = new JLabel("Nom du personnage");
+	
+	/**
+	 * buttonClassOne is the first JRadioButton. This button corresponds with Warrior.
+	 * This is the default choice if user doesn't click on radio buttons..
+	 */
     private JRadioButton buttonClassOne = new JRadioButton("Warrior");
+    /**
+     * buttonClassTwo is the second JRadioButton. This button corresponds with Wizard.
+     */
     private JRadioButton buttonClassTwo = new JRadioButton("Wizard");
+    /**
+     * buttonClassThree is the third JRadioButton. This button corresponds with Rogue.
+     */
     private JRadioButton buttonClassThree = new JRadioButton("Rogue");
 	
 	/**
@@ -69,11 +105,19 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	 * group of radio buttons
 	 */
 	private ButtonGroup buttonGroup = new ButtonGroup();
-	
+	/**
+	 * This button allows to go to the next window and returns informations.
+	 */
 	public GoToNextWindowButton validationButton = new GoToNextWindowButton("Valider le personnage!");
-
+	/**
+	 * window is the next window.
+	 */
 	private GameHCI window;
 	
+	/**
+	 * Creator of CharacterCreatorHCI. This window displays many informations : the name of the character,
+	 * the job of the character and the validation button to go into the game.
+	 */
 	public CharacterCreatorHCI(){
 		 // Set window title
 		this.setTitle("Walkyries");
@@ -93,7 +137,7 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 		//If true : the window is always on top, all applications could be hide because of this method
 		this.setAlwaysOnTop(false);
 		
-		mainContainer.setLayout(new GridLayout(3,1));
+		mainContainer.setLayout(new GridLayout(4,1));
 		
 		//Name's part
 		container.setBackground(Color.white);
@@ -124,22 +168,50 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    buttonRadioContainer.add(panTop);
 	    this.setContentPane(buttonRadioContainer);
 	    
+	    /*
+	    ImageIcon warriorImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Warrior.png");
+	    ImageIcon rogueImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Rogue.png");
+	    ImageIcon wizardImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Wizard.png");
+	    
+	    
+	    
 	    buttonGroup.add(buttonClassOne);
 	    buttonGroup.add(buttonClassTwo);
 	    buttonGroup.add(buttonClassThree);
 	    //La méthode isSelected() permet de savoir si le bouton radio est sélectionné ou non
-	    
+	    JLabel image;
+		if(buttonClassOne.isSelected())
+		{
+			image = new JLabel(warriorImage);
+		}else{
+			if(buttonClassTwo.isSelected())
+			{
+				image = new JLabel(wizardImage);
+			}else{
+				image = new JLabel(rogueImage);
+			}
+		}
+		Panel topImage = null;
+		topImage.add(image);
 
+		imageContainer.add(imageContainer);
+		*/
+		
 	    mainContainer.add(container);
 	    mainContainer.add(buttonRadioContainer);
+	    //mainContainer.add(imageContainer);
 	    mainContainer.add(validationButton);
 	    this.setContentPane(mainContainer);
 	    
 	    
 	    validationButton.addActionListener(this);
 		this.setVisible(true);
-		
 	}
+	
+	/**
+	 * This method allows to get the job of the character from radio buttons.
+	 * @return the name of the chosen job (it is a string).
+	 */
 	public String getJob(){
 
         if (buttonClassOne.isSelected())
@@ -152,6 +224,11 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
         	return (buttonClassOne.getText()); 
 
       }
+	
+	/**
+	 * This method allows to return the name of the character and his job.
+	 * Furthermore it allows to display the next window (GameHCI) with parameters.
+	 */
 	public void actionPerformed(ActionEvent arg0)
 	{
 		System.out.println(characterName.getText() + getJob());
