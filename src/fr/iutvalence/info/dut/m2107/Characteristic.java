@@ -34,7 +34,7 @@ public	void Setcharacteristic(String characteristicName,int characteristicValue)
  * show the characteristic name
  * @return name characteristic
  */
-public String getcharsteristicName(){
+public String getcharacteristicName(){
 	
 	return this.characteristicName;
 	

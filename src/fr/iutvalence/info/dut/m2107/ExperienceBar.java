@@ -11,13 +11,23 @@ public class ExperienceBar {
 	private static final int DEFAULT_EXPERIENCE_AMOUNT=0;
 	
 	/**
+	 * create bar default expereience and max experience of bar
+	 * @param currentExperienceAmount
+	 * @param maxExperienceAmount
+	 */
+	public ExperienceBar(int maxExperienceAmount){
+		this.currentExperienceAmount = DEFAULT_EXPERIENCE_AMOUNT;
+		this.maxExperienceAmount = maxExperienceAmount;
+		
+	}
+	/**
 	 * create bar with number of experience and max experience of bar
 	 * @param currentExperienceAmount
 	 * @param maxExperienceAmount
 	 */
 	public ExperienceBar(int currentExperienceAmount, int maxExperienceAmount)
 	{
-		this.currentExperienceAmount = DEFAULT_EXPERIENCE_AMOUNT;
+		this.currentExperienceAmount = currentExperienceAmount;
 		this.maxExperienceAmount = maxExperienceAmount;
 	}
 /**
@@ -40,6 +50,12 @@ public class ExperienceBar {
 		this.currentExperienceAmount = 0;
 		this.maxExperienceAmount = this.maxExperienceAmount * 2;
 	
+	}
+	public int getCurrentExperienceAmount() {
+		return currentExperienceAmount;
+	}
+	public void setCurrentExperienceAmount(int currentExperienceAmount) {
+		this.currentExperienceAmount = currentExperienceAmount;
 	}
 
 	
