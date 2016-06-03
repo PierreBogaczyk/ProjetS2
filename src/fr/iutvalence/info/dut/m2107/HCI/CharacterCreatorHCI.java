@@ -168,35 +168,31 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    buttonRadioContainer.add(panTop);
 	    this.setContentPane(buttonRadioContainer);
 	    
-	    /*
-	    ImageIcon warriorImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Warrior.png");
-	    ImageIcon rogueImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Rogue.png");
-	    ImageIcon wizardImage = new ImageIcon("C:\\Users\\Mickaël\\git\\ProjetS2\\img\\Wizard.png");
-	    
-	    
+	    //ImageIcon warriorImage = new ImageIcon("img/Warrior.png");
+	    //ImageIcon rogueImage = new ImageIcon("img/Rogue.png");
+	    //ImageIcon wizardImage = new ImageIcon("img/Wizard.png");
 	    
 	    buttonGroup.add(buttonClassOne);
 	    buttonGroup.add(buttonClassTwo);
 	    buttonGroup.add(buttonClassThree);
 	    //La méthode isSelected() permet de savoir si le bouton radio est sélectionné ou non
-	    JLabel image;
+	    
+	    /*JLabel image;
 		if(buttonClassOne.isSelected())
 		{
-			image = new JLabel(warriorImage);
+			image = new JLabel(new ImageIcon("/img/Warrior.png"));
 		}else{
 			if(buttonClassTwo.isSelected())
 			{
-				image = new JLabel(wizardImage);
+				image = new JLabel(new ImageIcon("/img/Wizard.png"));
 			}else{
-				image = new JLabel(rogueImage);
+				image = new JLabel(new ImageIcon("/img/Rogue.png"));
 			}
 		}
-		Panel topImage = null;
-		topImage.add(image);
 
-		imageContainer.add(imageContainer);
+		imageContainer.add(image);
+		imageContainer.setBackground(Color.BLACK);
 		*/
-		
 	    mainContainer.add(container);
 	    mainContainer.add(buttonRadioContainer);
 	    //mainContainer.add(imageContainer);
@@ -204,6 +200,40 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 	    this.setContentPane(mainContainer);
 	    
 	    
+	    /*
+	     * Attempt to add listener on radio button to put picture when buttons are checked
+	    buttonClassOne.addActionListener(new ActionListener()
+		{
+	    	@Override
+			public void actionPerformed(ActionEvent e){
+				JLabel image = new JLabel(new ImageIcon("/img/Warrior.png"));
+				imageContainer.add(image);
+				mainContainer.add(imageContainer);
+				}
+		});
+	    
+	    buttonClassTwo.addActionListener(new ActionListener()
+		{
+	    	@Override
+			public void actionPerformed(ActionEvent e){
+				JLabel image = new JLabel(new ImageIcon("/img/Wizard.png"));
+				imageContainer.add(image);
+				mainContainer.add(imageContainer);
+				}
+		});
+	    
+		buttonClassOne.addActionListener(new ActionListener()
+		{
+	    	@Override
+			public void actionPerformed(ActionEvent e){
+				JLabel image = new JLabel(new ImageIcon("/img/Rogue.png"));
+				imageContainer.add(image);
+				mainContainer.add(imageContainer);
+				}
+		});
+		*/
+		
+		
 	    validationButton.addActionListener(this);
 		this.setVisible(true);
 	}
@@ -236,5 +266,6 @@ public class CharacterCreatorHCI extends JFrame implements ActionListener
 		this.dispose();
 		window = new GameHCI(new Character(characterName.getText(),new Job(getJob())));
 	}
+	
 	
 }

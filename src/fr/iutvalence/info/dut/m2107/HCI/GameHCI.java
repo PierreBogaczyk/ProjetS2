@@ -121,9 +121,9 @@ public class GameHCI extends JFrame
 		actionMenu.add(this.moveButton);
 		actionMenu.add(this.inventoryButton);
 		actionMenu.add(this.menuButton);
-		actionMenu.add(this.skill1);
-		actionMenu.add(this.skill2);
-		actionMenu.add(this.skill3);
+		//actionMenu.add(this.skill1);
+		//actionMenu.add(this.skill2);
+		//actionMenu.add(this.skill3);
 		
 		/**
 		 * Allow to display the window
