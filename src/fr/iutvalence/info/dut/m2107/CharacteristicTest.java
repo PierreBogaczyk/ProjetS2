@@ -2,7 +2,7 @@ package fr.iutvalence.info.dut.m2107;
 import junit.framework.*;
 /**
  * characteristic test class
- * @author SekaiHaru
+ * @author MorganDelarbre
  *
  */
 public class CharacteristicTest extends TestCase
