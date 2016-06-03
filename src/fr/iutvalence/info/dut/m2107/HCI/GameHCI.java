@@ -1,10 +1,13 @@
 package fr.iutvalence.info.dut.m2107.HCI;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.JTextField;
 
 import fr.iutvalence.info.dut.m2107.Panel;
 import fr.iutvalence.info.dut.m2107.Character;
@@ -64,6 +67,9 @@ public class GameHCI extends JFrame
 	 */
 	public JPanel displayComponent = new JPanel();
 	
+	private JTextField characterName;
+	private JTextField characterJob;
+	
 	public ActionButton actionButton = new ActionButton("Action",this);
 	public MoveButton moveButton = new MoveButton("Déplacement");
 	public InventoryButton inventoryButton = new InventoryButton("Inventaire");
@@ -73,7 +79,18 @@ public class GameHCI extends JFrame
 	public SkillButton skill3;
 	public GameHCI(Character character){
 		
-		 this.character = character;
+		this.character = character;
+		this.characterJob = new JTextField(this.character.getCharacterName());
+		this.characterName = new JTextField(this.character.getCharacterJob().getJobName());
+		Font police = new Font("Arial", Font.BOLD, 14);
+
+	    characterName.setFont(police);
+	    characterName.setPreferredSize(new Dimension(150, 30));
+	    characterName.setForeground(Color.BLACK);
+
+	    characterJob.setFont(police);
+	    characterJob.setPreferredSize(new Dimension(150, 30));
+	    characterJob.setForeground(Color.BLACK);
 		 // Set window title
 		this.setTitle("Walkyries");
 		this.skill1 = new SkillButton(this.character.getCharacterJob().getJobSkillList().get(0));
@@ -124,7 +141,8 @@ public class GameHCI extends JFrame
 		//actionMenu.add(this.skill1);
 		//actionMenu.add(this.skill2);
 		//actionMenu.add(this.skill3);
-		
+		displayComponent.add(this.characterName);
+		displayComponent.add(this.characterJob);
 		/**
 		 * Allow to display the window
 		 */
