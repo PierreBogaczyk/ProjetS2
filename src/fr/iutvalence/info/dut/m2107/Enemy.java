@@ -8,16 +8,19 @@ import fr.iutvalence.info.dut.m2107.action.DamageSpell;
 
 /**
  * @author bogaczpi
- *
+ *		
  */
-public class Enemy extends NPC{
+public class Enemy extends NPC
+{
 	private int enemyHealth;
 	
 	/**
-	 * @param name Name of the enemy
-	 * @param health Health of the enemy
+	 * @param name
+	 *            Name of the enemy
+	 * @param health
+	 *            Health of the enemy
 	 */
-	public Enemy(String name,int health)
+	public Enemy(String name, int health)
 	{
 		super(name);
 		this.enemyHealth = health;
@@ -25,61 +28,72 @@ public class Enemy extends NPC{
 	
 	/**
 	 * Choice of a skill by an enemy
-	 * @param target Target of the enemy
-	 * @param targetSkill Skill used by the target
+	 * 
+	 * @param target
+	 *            Target of the enemy
+	 * @param targetSkill
+	 *            Skill used by the target
 	 */
-	public void performAction(Character target,Skill targetSkill)
+	public void performAction(Character target, Skill targetSkill)
 	{
-		if(targetSkill instanceof Spell)
+		if (targetSkill instanceof Spell)
 		{
-			if(targetSkill instanceof DamageSpell)
+			if (targetSkill instanceof DamageSpell)
 			{
-				useSkill(new HealingSpell("First Aid",5),target);
+				useSkill(new HealingSpell("First Aid", 5), target);
 			}
-			if(targetSkill instanceof HealingSpell)
+			if (targetSkill instanceof HealingSpell)
 			{
-				useSkill(new DamageSpell("Fireball",15),target);
+				useSkill(new DamageSpell("Fireball", 15), target);
 			}
 		}
-		if(targetSkill instanceof Attack)
+		if (targetSkill instanceof Attack)
 		{
-			useSkill(new Attack("Strike",10),target);
+			useSkill(new Attack("Strike", 10), target);
 		}
 	}
+	
 	/**
 	 * Use of a skill by an enemy
-	 * @param usedSkill Skill used by the enemy
-	 * @param target Target of the skill
+	 * 
+	 * @param usedSkill
+	 *            Skill used by the enemy
+	 * @param target
+	 *            Target of the skill
 	 */
-	public void useSkill(Skill usedSkill,Character target)
+	public void useSkill(Skill usedSkill, Character target)
 	{
-		if(usedSkill instanceof Spell)
+		if (usedSkill instanceof Spell)
 		{
-			if(usedSkill instanceof DamageSpell)
+			if (usedSkill instanceof DamageSpell)
 			{
-				target.setCharacterHealth(target.getCharacterHealth() - ((DamageSpell)usedSkill).getSpellDamage());
+				target.setCharacterHealth(target.getCharacterHealth() - ((DamageSpell) usedSkill).getSpellDamage());
 			}
-			if(usedSkill instanceof HealingSpell)
+			if (usedSkill instanceof HealingSpell)
 			{
-				this.enemyHealth = this.enemyHealth + ((HealingSpell)usedSkill).getHealthHealed();
+				this.enemyHealth = this.enemyHealth + ((HealingSpell) usedSkill).getHealthHealed();
 			}
 		}
-		if(usedSkill instanceof Attack)
+		if (usedSkill instanceof Attack)
 		{
-			target.setCharacterHealth(target.getCharacterHealth() - ((Attack)usedSkill).getSkillDamage());
+			target.setCharacterHealth(target.getCharacterHealth() - ((Attack) usedSkill).getSkillDamage());
 		}
 	}
 	
 	/**
 	 * @return The health of the current enemy
 	 */
-	public int getEnemyHealth() {
+	public int getEnemyHealth()
+	{
 		return enemyHealth;
 	}
+	
 	/**
-	 * @param Set the health of the current enemy;
+	 * @param Set
+	 *            the health of the current enemy;
 	 */
-	public void setEnemyHealth(int enemyHealth) {
+	public void setEnemyHealth(int enemyHealth)
+	{
 		this.enemyHealth = enemyHealth;
 	}
-}	
+}

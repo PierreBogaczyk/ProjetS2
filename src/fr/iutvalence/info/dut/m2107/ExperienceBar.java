@@ -1,27 +1,34 @@
 package fr.iutvalence.info.dut.m2107;
+
 /**
  * class experience bar
+ * 
  * @author delarbrm
- *
+ *		
  */
-public class ExperienceBar {
-	//TODO add attributes and methods 
+public class ExperienceBar
+{
+	// TODO add attributes and methods
 	private int currentExperienceAmount;
 	private int maxExperienceAmount;
-	private static final int DEFAULT_EXPERIENCE_AMOUNT=0;
+	private static final int DEFAULT_EXPERIENCE_AMOUNT = 0;
 	
 	/**
 	 * create bar default expereience and max experience of bar
+	 * 
 	 * @param currentExperienceAmount
 	 * @param maxExperienceAmount
 	 */
-	public ExperienceBar(int maxExperienceAmount){
+	public ExperienceBar(int maxExperienceAmount)
+	{
 		this.currentExperienceAmount = DEFAULT_EXPERIENCE_AMOUNT;
 		this.maxExperienceAmount = maxExperienceAmount;
 		
 	}
+	
 	/**
 	 * create bar with number of experience and max experience of bar
+	 * 
 	 * @param currentExperienceAmount
 	 * @param maxExperienceAmount
 	 */
@@ -30,33 +37,43 @@ public class ExperienceBar {
 		this.currentExperienceAmount = currentExperienceAmount;
 		this.maxExperienceAmount = maxExperienceAmount;
 	}
-/**
- * add experiences to a bar
- * @param Experience
- */
+	
+	/**
+	 * add experiences to a bar
+	 * 
+	 * @param Experience
+	 */
 	public void addExperience(int Experience)
 	{
-		this.currentExperienceAmount=this.currentExperienceAmount+Experience;
+		this.currentExperienceAmount = this.currentExperienceAmount + Experience;
 	}
+	
 	/**
-	 *up level of the player
+	 * up level of the player
+	 * 
 	 * @param player
 	 */
-	public void Levelup(Character player){
-		if(this.currentExperienceAmount>=this.maxExperienceAmount){
-			this.currentExperienceAmount=DEFAULT_EXPERIENCE_AMOUNT+(this.maxExperienceAmount-this.currentExperienceAmount);
-			player.setCharacterLevel(player.getCharacterLevel() + 1);		
+	public void Levelup(Character player)
+	{
+		if (this.currentExperienceAmount >= this.maxExperienceAmount)
+		{
+			this.currentExperienceAmount = DEFAULT_EXPERIENCE_AMOUNT
+					+ (this.maxExperienceAmount - this.currentExperienceAmount);
+			player.setCharacterLevel(player.getCharacterLevel() + 1);
 		}
 		this.currentExperienceAmount = 0;
 		this.maxExperienceAmount = this.maxExperienceAmount * 2;
-	
+		
 	}
-	public int getCurrentExperienceAmount() {
+	
+	public int getCurrentExperienceAmount()
+	{
 		return currentExperienceAmount;
 	}
-	public void setCurrentExperienceAmount(int currentExperienceAmount) {
+	
+	public void setCurrentExperienceAmount(int currentExperienceAmount)
+	{
 		this.currentExperienceAmount = currentExperienceAmount;
 	}
-
 	
 }

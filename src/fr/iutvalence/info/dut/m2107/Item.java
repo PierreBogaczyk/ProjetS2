@@ -1,10 +1,13 @@
 package fr.iutvalence.info.dut.m2107;
+
 import java.util.ArrayList;
+
 /**
  * create call item
  */
-public class Item {
- 
+public class Item
+{
+	
 	/**
 	 * Type of item
 	 */
@@ -24,17 +27,21 @@ public class Item {
 	
 	/**
 	 * This is the constructor of Item
-	 * @param idItem identificator of item 
-	 * @param itemType type of item
-	 * @param itemValue value of item
+	 * 
+	 * @param idItem
+	 *            identificator of item
+	 * @param itemType
+	 *            type of item
+	 * @param itemValue
+	 *            value of item
 	 */
-	public Item (int idItem, ItemType itemType, int itemValue,ArrayList<Characteristic> itemCharacteristic) {
+	public Item(int idItem, ItemType itemType, int itemValue, ArrayList<Characteristic> itemCharacteristic)
+	{
 		
-		this.idItem=idItem;
-		this.itemType=itemType;
-		this.itemValue=itemValue;
-		this.itemCharacteristic=itemCharacteristic;	
+		this.idItem = idItem;
+		this.itemType = itemType;
+		this.itemValue = itemValue;
+		this.itemCharacteristic = itemCharacteristic;
 	}
-	
 	
 }

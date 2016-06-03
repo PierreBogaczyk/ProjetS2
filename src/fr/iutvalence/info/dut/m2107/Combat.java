@@ -8,37 +8,39 @@ public class Combat
 	private Enemy enemy;
 	private Area fightArea;
 	
-	public Combat(Character character,Enemy enemy,Area fightArea)
+	public Combat(Character character, Enemy enemy, Area fightArea)
 	{
 		this.character = character;
 		this.enemy = enemy;
 		this.fightArea = fightArea;
 	}
-
+	
 	public void launchCombat()
-    {
-		//TODO set the HCI to combat mode
+	{
+		// TODO set the HCI to combat mode
 		boolean isPlayerTurn = true;
-		while(this.isCombatOver())
+		while (this.isCombatOver())
 		{
 			Skill chosenSkill = null;
-			if(isPlayerTurn)
+			if (isPlayerTurn)
 			{
 				chosenSkill = character.chooseAction(null);
-			}
-			else
+			} else
 			{
-				enemy.performAction(this.character,chosenSkill);
+				enemy.performAction(this.character, chosenSkill);
 			}
 			isPlayerTurn = !(isPlayerTurn);
 		}
-		//TODO set back the HCI to exploration mode
-    }
+		// TODO set back the HCI to exploration mode
+	}
+	
 	private boolean isCombatOver()
 	{
-		if(this.enemy.getEnemyHealth() > 0) return false;
-		if(this.character.getCharacterHealth() > 0) return false;
+		if (this.enemy.getEnemyHealth() > 0)
+			return false;
+		if (this.character.getCharacterHealth() > 0)
+			return false;
 		return true;
 	}
-
+	
 }
